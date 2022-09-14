@@ -19,7 +19,8 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        //here you can change cron time acc to requirement (hourly(),daily() etc)
+        //$schedule->command('fetch:users')->daily();
         $schedule->command('fetch:users');
     }
 

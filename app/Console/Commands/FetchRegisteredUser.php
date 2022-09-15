@@ -57,8 +57,5 @@ class FetchRegisteredUser extends Command
             $code = $e->getCode();
             var_dump('Exception Code: '. $code);
         }
-
-
-
     }
 }

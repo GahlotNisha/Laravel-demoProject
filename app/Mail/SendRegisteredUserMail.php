@@ -27,7 +27,7 @@ class SendRegisteredUserMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.Registration-reminder')
+        return $this->markdown('emails.registration-reminder')
             ->subject('Todays Registered User List')
             ->from(env("MAIL_FROM_ADDRESS") ? 'saurabh.dave@fooddudesdelivery.com' : 'jjain@fooddudesdelivery.com', 'fooddudesdelivery')->with([
                 'data' => $this->data,

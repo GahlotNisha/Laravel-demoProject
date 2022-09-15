@@ -20,11 +20,11 @@
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="">Title</label>
-                                <input name="title" type="text" class="form-control" >
+                                <input required name="title" type="text" class="form-control" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Description</label>
-                                <textarea name="description" class="form-control" ></textarea>
+                                <textarea required name="description" class="form-control" ></textarea>
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary" >submit</button>

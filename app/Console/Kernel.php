@@ -22,7 +22,7 @@ class Kernel extends ConsoleKernel
         //here you can change cron time acc to requirement (hourly(),daily() etc)
         //$schedule->command('fetch:users')->daily();
        $data =  $schedule->command('fetch:users');
-       dd($data);
+
     }
 
     /**

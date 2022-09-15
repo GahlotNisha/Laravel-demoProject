@@ -42,13 +42,23 @@ class FetchRegisteredUser extends Command
     public function handle()
     {
         $user = User::whereDate('created_at', '=', Carbon::today()->toDateString())->get()->toArray();
-        if (!empty($user)){
-            Mail::to('saurabh.dave@fooddudesdelivery.com')
-                ->cc('jjain@fooddudesdelivery.com')
-                ->send(new SendRegisteredUserMail($user));
-        }else{
-            echo  'No user registered today.';
+        try{
+            if (!empty($user)){
+                Mail::to('saurabh.dave@fooddudesdelivery.com')
+                    ->cc('jjain@fooddudesdelivery.com')
+                    ->send(new SendRegisteredUserMail($user));
+                echo 'Mail sent to Admin.';
+            }else{
+                echo  'No user registered today.';
+            }
+        }catch (\Exception $e){
+            $message = $e->getMessage();
+            var_dump('Exception Message: '. $message);
+            $code = $e->getCode();
+            var_dump('Exception Code: '. $code);
         }
+
+
 
     }
 }
